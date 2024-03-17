@@ -23,56 +23,54 @@ const Testimonials = dynamic(() => import("../src/components/Testimonials"), {
   ssr: false,
 });
 const Index = () => {
-  const [user, setUser]=useState({});
-  useEffect(()=>{
-    const fetchData = async()=>{
-      try{
-        const res=await fetch("https://portfolio-backend-30mp.onrender.com/api/v1/get/user/65b3a22c01d900e96c4219ae");
-        console.log("service response is",res);
-        if(!res.ok){
-          throw new Error('Failed to fetch data');
+  const [user, setUser] = useState({});
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await fetch(
+          "https://portfolio-backend-30mp.onrender.com/api/v1/get/user/65b3a22c01d900e96c4219ae"
+        );
+        console.log("service response is", res);
+        if (!res.ok) {
+          throw new Error("Failed to fetch data");
         }
-        const data= await res.json();
+        const data = await res.json();
         console.log("data is", data);
         setUser(data.user);
         // console.log("service data is", serviceData);
+      } catch (error) {
+        console.log("Error during fetching the data", error);
       }
-      catch(error){
-        console.log("Error during fetching the data",error)
-      }
-    }
-    fetchData()
-  },[])
+    };
+    fetchData();
+  }, []);
 
   return (
-    
-    <>
-    {user &&  
     <Layout>
       <Head>
         <title>Devman | Home</title>
       </Head>
       <MobileHeader />
       <Header />
-      {user.about && <Home homeData={user.about}/> }      
+      {user.about && <Home homeData={user.about} />}
       <Features />
-      {user.about && <About about={user.about} skills={user.skills}/> }      
+      {user.about && <About about={user.about} skills={user.skills} />}
       <CounterSection />
-      {user.projects && <Portfolio projects={user.projects}/> }     
-      {user.skills && <Skills skills={user.skills}/> }         
-      {user.services && <Service services={user.services}/> }      
+      {user.projects && <Portfolio projects={user.projects} />}
+      {user.skills && <Skills skills={user.skills} />}
+      {user.services && <Service services={user.services} />}
       <Process />
-      {user.testimonials && <Testimonials testimonials={user.testimonials}/> }      
+      {user.testimonials && <Testimonials testimonials={user.testimonials} />}
       <Partners />
       <Contact />
       <Blog />
-      {user.social_handles && <Copyright social_handles={user.social_handles}/>}
-      
+      {user.social_handles && (
+        <Copyright social_handles={user.social_handles} />
+      )}
+
       <Mouse />
       <ScrollTop />
     </Layout>
-    }
-    </>
   );
 };
 export default Index;
