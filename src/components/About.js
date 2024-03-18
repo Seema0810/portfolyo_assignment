@@ -30,7 +30,7 @@ const About = ({about,skills}) => {
             <div className="left">
               <div className="image_wrap">
                 <img src="img/thumbs/64-49.jpg" alt="" />
-                <div className="main" data-img-url={aboutData.avatar.url} />
+                <div className="main" data-img-url={aboutData?.avatar?.url} />
                 <div className="extra_image">
                   <div className="image_inner">
                     <img src="img/thumbs/1-1.jpg" alt="" />

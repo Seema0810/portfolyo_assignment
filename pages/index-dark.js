@@ -1,5 +1,5 @@
 import dynamic from "next/dynamic";
-import { useEffect } from "react";
+import { useEffect,useState } from "react";
 import About from "../src/components/About";
 import Blog from "../src/components/Blog";
 import Contact from "../src/components/Contact";
@@ -23,33 +23,55 @@ const Testimonials = dynamic(() => import("../src/components/Testimonials"), {
   ssr: false,
 });
 const IndexDark = () => {
+  const [user, setUser] = useState({});
   useEffect(() => {
     document.querySelector("body").classList.add("dark");
+    const fetchData = async () => {
+      try {
+        const res = await fetch(
+          "https://portfolio-backend-30mp.onrender.com/api/v1/get/user/65b3a22c01d900e96c4219ae"
+        );
+        console.log("service response is", res);
+        if (!res.ok) {
+          throw new Error("Failed to fetch data");
+        }
+        const data = await res.json();
+        console.log("data is", data);
+        setUser(data.user);
+        // console.log("service data is", serviceData);
+      } catch (error) {
+        console.log("Error during fetching the data", error);
+      }
+    };
+    fetchData();
   }, []);
 
   return (
     <Layout>
-      <Head>
-        <title>Devman | Home</title>
-      </Head>
-      <MobileHeader />
-      <Header />
-      <Home />
-      <Features />
-      <About />
-      <CounterSection />
-      <Portfolio />
-      <Skills />
-      <Service />
-      <Process />
-      <Testimonials />
-      <Partners dark />
-      <Contact />
-      <Blog />
-      <Copyright />
-      <Mouse />
-      <ScrollTop />
-    </Layout>
+    <Head>
+      <title>Devman | Home</title>
+    </Head>
+    <MobileHeader />
+    <Header />
+    {user.about && <Home homeData={user.about} />}
+    <Features />
+    {user.about && <About about={user.about} skills={user.skills} />}
+    <CounterSection />
+    {user.projects && <Portfolio projects={user.projects} />}
+    {user.skills && <Skills skills={user.skills} />}
+    {user.services && <Service services={user.services} />}
+    <Process />
+    {user.testimonials && <Testimonials testimonials={user.testimonials} />}
+    <Partners dark />
+    <Contact />
+    <Blog />
+    {user.social_handles && (
+      <Copyright social_handles={user.social_handles} />
+    )}
+
+    <Mouse />
+    <ScrollTop />
+  </Layout>
   );
 };
 export default IndexDark;

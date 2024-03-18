@@ -17,7 +17,7 @@ const Home = ({homeData}) => {
     <div className="devman_tm_section" id="home">
       <div className="devman_tm_hero">
         <div className="background">
-          <div className="image" data-img-url={homeData.avatar.url}  />
+          <div className="image" data-img-url={homeData?.avatar?.url}  />
         </div>
         <div className="container">
           <div className="content">
