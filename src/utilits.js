@@ -108,10 +108,15 @@ export const imgToSVG = () => {
     const imgURL = el.getAttribute("src");
 
     fetch(imgURL)
-      .then((data) => data.text())
       .then((response) => {
+        if (!response.ok) {
+          throw new Error('Failed to fetch SVG image');
+        }
+        return response.text();
+      })
+      .then((data) => {
         const parser = new DOMParser();
-        const xmlDoc = parser.parseFromString(response, "text/html");
+        const xmlDoc = parser.parseFromString(data, "text/html");
         let svg = xmlDoc.querySelector("svg");
 
         if (typeof imgID !== "undefined") {
@@ -126,6 +131,9 @@ export const imgToSVG = () => {
         if (el.parentNode) {
           el.parentNode.replaceChild(svg, el);
         }
+      })
+      .catch((error) => {
+        console.error('Error fetching SVG image:', error);
       });
   });
 };
