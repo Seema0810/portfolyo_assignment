@@ -23,6 +23,7 @@ const Service = ({services}) => {
                     className={`wow ${i % 2 ? "fadeInLeft" : "fadeInRight"}`}
                     data-wow-duration="1s"
                     key={i}
+                    style={{visibility: "visible", animationDuration: "1s"}}
                   >
                     <div className="list_inner">
                       <img className="svg" src={service.image.url} alt="" />

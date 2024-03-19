@@ -1615,6 +1615,18 @@ h6 {
 .devman_tm_service .service_list ul li:nth-child(4) .list_inner {
   background-color: #6b97d3;
 }
+.devman_tm_service .service_list ul li:nth-child(5) .list_inner {
+  background-color: #6e7fd1;
+}
+.devman_tm_service .service_list ul li:nth-child(6) .list_inner {
+  background-color: #343c55;
+}
+.devman_tm_service .service_list ul li:nth-child(7) .list_inner {
+  background-color: #142eb5;
+}
+.devman_tm_service .service_list ul li:nth-child(8) .list_inner {
+  background-color: #6b97d3;
+}
 .devman_tm_service .service_list ul li .list_inner:hover {
   background-color: var(--main-color);
 }
