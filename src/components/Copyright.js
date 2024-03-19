@@ -17,6 +17,20 @@ const Copyright = ({social_handles}) => {
                 © {new Date().getFullYear()}
               </p>
             </div>
+            <div className="social-handles wow aniamted" style={{visibility:"visible"}}>
+            <ul style={{ listStyle: "none", display:"flex" }}>
+            {social_handles.map((social, index)=>{
+              return(
+                <li key={index}>
+                <a href="#" >
+                  <img src={social.image.url} alt={social.platform} style={{width:"1.8rem", height:"1.8rem", margin:"0.5rem"}}/>
+                </a>
+              </li>
+              )
+            })}
+          
+          </ul>
+            </div>
             <div className="right wow fadeInRight" data-wow-duration="1s">
               <ul>
                 <li>
@@ -28,18 +42,7 @@ const Copyright = ({social_handles}) => {
               </ul>
             </div>
           </div>
-          <ul style={{ listStyle: "none", display:"flex" }}>
-            {social_handles.map((social, index)=>{
-              return(
-                <li key={index}>
-                <a href="#" >
-                  <img src={social.image.url} alt={social.platform} style={{width:"2rem", height:"2rem", margin:"0.5rem"}}/>
-                </a>
-              </li>
-              )
-            })}
-          
-          </ul>
+         
         </div>
       </div>
     </div>
