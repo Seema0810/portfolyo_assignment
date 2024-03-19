@@ -3,7 +3,7 @@ import ServicePopup from "./popup/ServicePopup";
 
 
 const Service = ({services}) => { 
-   services=services.slice(0,4);
+  //  services=services.slice(0,4);
   const [activeData, setActiveData] = useState({});
   const [open, setOpen] = useState(false);
   return (

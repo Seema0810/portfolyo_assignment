@@ -11,12 +11,12 @@ const Header = () => {
     <div className="devman_tm_header">
       <div className="container">
         <div className="header_inner">
-          <div className="logo">
+          <div className="logo">          
             <a className="light" href="#">
-              <img src="img/logo/logo.png" alt="" />
+               <h3 style={{color:"white"}}> John</h3>
             </a>
             <a className="dark" href="#">
-              <img src="img/logo/dark.png" alt="" />
+            <h3 style={{color:"black"}}> John</h3>
             </a>
           </div>
           <div className="menu">

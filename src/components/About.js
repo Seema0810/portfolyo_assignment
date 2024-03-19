@@ -1,25 +1,25 @@
-// const aboutData = {
-//   designation: "Developer",
-//   title: "I Develop Application that Help People",
-//   text: [
-//     "Dliquip ex ea commo do conse namber onequa ute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatu epteur sint occaecat cupidatat",
-//     "Krnon proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis",
-//   ],
-//   skillIcons: [
-//     { name: "joomla", icon: "img/svg/joomla.svg" },
-//     { name: "wp", icon: "img/svg/wp.svg" },
-//     { name: "drupal", icon: "img/svg/drupal.svg" },
-//     { name: "laravel", icon: "img/svg/laravel.svg" },
-//   ],
-// };
+const aboutInfo = {
+  // designation: "Developer",
+  // title: "I Develop Application that Help People",
+  // text: [
+  //   "Dliquip ex ea commo do conse namber onequa ute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatu epteur sint occaecat cupidatat",
+  //   "Krnon proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis",
+  // ],
+  skillIcons: [
+    { name: "joomla", icon: "img/svg/joomla.svg" },
+    { name: "wp", icon: "img/svg/wp.svg" },
+    { name: "drupal", icon: "img/svg/drupal.svg" },
+    { name: "laravel", icon: "img/svg/laravel.svg" },
+  ],
+};
 
-const About = ({about,skills}) => {
+const About = ({about}) => {
   const aboutData = about; 
-  aboutData.skillIcons=skills.map((skill)=>{
-    return (
-       {name:skill.name,icon:skill.image.url }
-    )
-  }); 
+  // aboutData.skillIcons=skills.map((skill)=>{
+  //   return (
+  //      {name:skill.name,icon:skill.image.url }
+  //   )
+  // }); 
   console.log("Data about me", aboutData);
    
   return (
@@ -36,11 +36,11 @@ const About = ({about,skills}) => {
                     <img src="img/thumbs/1-1.jpg" alt="" />
                     <div
                       className="main_extra"
-                      data-img-url={aboutData.skillIcons[0].icon}
+                      data-img-url={aboutData?.avatar?.url}
                     />
                   </div>
                 </div>
-                {aboutData.skillIcons.map((skill, i) => (
+                {aboutInfo.skillIcons.map((skill, i) => (
                   <div className={i === 0 ? "extra_image" : ""} key={i}>
                     <span
                       className={`icon_${i + 1} wow fadeIn`}

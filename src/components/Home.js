@@ -17,7 +17,7 @@ const Home = ({homeData}) => {
     <div className="devman_tm_section" id="home">
       <div className="devman_tm_hero">
         <div className="background">
-          <div className="image" data-img-url={homeData?.avatar?.url}  />
+          <div className="image" data-img-url="" style={{backgroundColor:"#457b9d"}} />
         </div>
         <div className="container">
           <div className="content">
@@ -49,8 +49,8 @@ const Home = ({homeData}) => {
             </div>
             <div className="right">
               <div className="image">
-                <img src="img/thumbs/53-61.jpg" alt="" />
-                <div className="main" data-img-url={homeData.img} />
+                <img src={homeData?.avatar?.url} alt="" />
+                <div className="main" data-img-url={homeData?.avatar?.url} />
                 <span className="win">
                   <img src="img/svg/award.svg" alt="" className="svg" />
                 </span>
