@@ -1,14 +1,17 @@
 import Popup from "./Popup";
-const DetailsPopup = ({ open, close }) => {
+const DetailsPopup = ({ open, close,data }) => {
+  // alert(data?.image?.url);
   return (
     <Popup open={open} close={close}>
       <div className="popup_details">
         <div className="top_image">
-          <img src="img/thumbs/4-2.jpg" alt="" />
+          <img src={data?.image?.url} alt="" />
           <div
             className="main"
-            data-img-url="img/portfolio/4.jpg"
-            style={{ backgroundImage: 'url("img/portfolio/4.jpg")' }}
+            data-img-url={data?.image?.url}
+            
+            style={{ backgroundImage: `url(${data?.image?.url})` }}
+            // style={{ backgroundImage: 'url("https://portfolio-image-store.s3.ap-south-1.amazonaws.com/1706285431821-3lfg2r")' }}
           />
         </div>
         <div className="portfolio_main_title">
@@ -58,24 +61,24 @@ const DetailsPopup = ({ open, close }) => {
             <li>
               <div className="list_inner">
                 <div className="my_image">
-                  <img src="img/thumbs/4-2.jpg" alt="" />
-                  <div className="main" data-img-url="img/service/1.jpg" />
+                  <img src={data?.image?.url} alt="" />
+                  <div className="main" data-img-url={data?.image?.url} style={{ backgroundImage: `url(${data?.image?.url})` }} />
                 </div>
               </div>
             </li>
             <li>
               <div className="list_inner">
                 <div className="my_image">
-                  <img src="img/thumbs/4-2.jpg" alt="" />
-                  <div className="main" data-img-url="img/service/2.jpg" />
+                  <img src={data?.image?.url} alt="" />
+                  <div className="main" data-img-url={data?.image?.url} style={{ backgroundImage: `url(${data?.image?.url})` }} />
                 </div>
               </div>
             </li>
             <li>
               <div className="list_inner">
                 <div className="my_image">
-                  <img src="img/thumbs/4-2.jpg" alt="" />
-                  <div className="main" data-img-url="img/service/3.jpg" />
+                  <img src={data?.image?.url} alt="" />
+                  <div className="main" data-img-url={data?.image?.url}  style={{ backgroundImage: `url(${data?.image?.url})` }}/>
                 </div>
               </div>
             </li>

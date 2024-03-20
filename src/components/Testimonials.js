@@ -34,7 +34,7 @@ const Testimonials = ({testimonials}) => {
                 <div className="list_inner">
                   <img className="svg" src="img/svg/quote.svg" alt="" />
                   <p className="text">
-                  {testimonial.review.slice(0,200)}
+                  {testimonial.review.slice(0,150)}
                   </p>
                   <div className="details">
                     <div className="image">

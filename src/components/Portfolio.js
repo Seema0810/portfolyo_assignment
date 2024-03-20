@@ -3,10 +3,12 @@ import DetailsPopup from "./popup/DetailsPopup";
 
 const Portfolio = ({projects}) => {
   console.log("projects are", projects)
+  const [activeData, setActiveData] = useState({});
   const [popup, setPopup] = useState(false);
   return (
     <Fragment>
-      <DetailsPopup open={popup} close={() => setPopup(false)} />
+
+      <DetailsPopup open={popup} close={() => setPopup(false)}  data={activeData}/>
       <div className="devman_tm_section" id="portfolio">
         <div className="devman_tm_portfolio">
           <div className="container">
@@ -47,10 +49,17 @@ const Portfolio = ({projects}) => {
                       </div>
                     </div>
                     <div className="overlay" />
-                    <a
+                    {/* <a
                       className="devman_tm_full_link popup-youtube"
-                      href="https://www.youtube.com/watch?v=7e90gBu4pas"
-                    />
+                      // href="https://www.youtube.com/watch?v=7e90gBu4pas"
+                    /> */}
+                    <a
+                        className="devman_tm_full_link c-pointer"
+                        onClick={() => {
+                          setActiveData(project);
+                          setPopup(true);
+                        }}
+                      />
                   </div>
                 </li>
                   )
