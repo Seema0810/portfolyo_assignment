@@ -80,7 +80,7 @@ const Home = ({homeData}) => {
                   </div>
                 </div>
                 <span className="circle anim_circle">
-                  <img src="img/hero/circle.png" alt="" />
+                  <img src={homeData?.avatar?.url} alt="" />
                 </span>
               </div>
             </div>

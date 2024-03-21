@@ -693,18 +693,29 @@ h6 {
 }
 .devman_tm_hero .circle {
   position: absolute;
-  bottom: 0px;
-  left: 0px;
+  /* bottom: 0px;
+  left: 0px; */
   z-index: 1;
-  left: -70px;
-  bottom: -70px;
+  /* left: -70px;
+  bottom: -70px; */
+  aspect-ratio: 1/1;
+  /* overflow: hidden; */
+  display:flex;
+  align-items: center;
+  justify-content: center;
+
 }
 .devman_tm_hero .circle img {
-  max-width: 160px;
+  width:120px;
+  height:120px;
+  margin-top: 55px;
+  border-radius: 50%;
+  /* max-width: 160px; */
   opacity: 1 !important;
+  object-fit: cover;
 }
 .anim_circle {
-  animation: animCircle 15s infinite linear;
+  animation: animCircle 15s  linear infinite;
 }
 
 @keyframes animCircle {
@@ -712,7 +723,7 @@ h6 {
     transform: rotate(0deg);
   }
   100% {
-    transform: rotate(-360deg);
+    transform: rotate(-1turn);
   }
 }
 
