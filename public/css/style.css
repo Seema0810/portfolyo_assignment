@@ -1429,7 +1429,23 @@ h6 {
 /*---------------------------------------------------*/
 /*	09) DEVMAN SKILLS
 /*---------------------------------------------------*/
-
+.skills-images{
+  display: flex;
+  flex-wrap: wrap;
+  /* gap:10x; */
+  /* padding: 10px; */
+  justify-content: center;
+}
+.skill-image{
+ margin-bottom: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px gray;
+}
+.skill-image{
+  height: 100px;
+  width:100px;
+  transition: all .3s ease-in-out;
+}
 .devman_tm_skills {
   width: 100%;
   height: auto;
@@ -1450,7 +1466,7 @@ h6 {
 }
 .devman_tm_skills .right {
   width: 50%;
-  padding-left: 70px;
+  /* padding-left: 70px; */
 }
 .dodo_progress {
   width: 100%;

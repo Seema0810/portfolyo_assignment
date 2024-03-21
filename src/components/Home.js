@@ -24,7 +24,7 @@ const Home = ({homeData}) => {
             <div className="left">
               <div className="inner">
                 <h3 className="hello">Hello {`I'm`}</h3>
-                <h3 className="name">
+                <h3 className="name" style={{color:"#f77f00"}}>
                   {homeData.name}
                 </h3>
                 <h3 className="job">

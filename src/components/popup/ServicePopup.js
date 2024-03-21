@@ -5,11 +5,11 @@ const ServicePopup = ({ data, open, close }) => {
     <Popup open={open} close={close}>
       <div className="service_popup_informations">
         <div className="image">
-          <img src={data.image.url} alt="" />
+          <img src={data?.image?.url} alt="" />
           <div
             className="main"
-            data-img-url={data.image.url}
-            style={{ backgroundImage: `url(${data.image.url})` }}
+            data-img-url={data?.image?.url}
+            style={{ backgroundImage: `url(${data?.image?.url})` }}
           />
         </div>
         <div className="main_title">
