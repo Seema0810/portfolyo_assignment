@@ -30,7 +30,7 @@ const Skills = ({ skills }) => {
                       data-color="#142eb5"
                       key={index}
                       style={{
-                        width: "calc(50% - 10px)", // Adjust width for two columns with spacing
+                        width: "calc(100% - 10px)", // Adjust width for two columns with spacing
                         marginBottom: "20px", // Added for vertical spacing between items
                       }}
                     >
@@ -52,18 +52,20 @@ const Skills = ({ skills }) => {
             </div>
             <div className="right">
               <div className="dodo_progress">
-              {skills.map((skill, index) => {
-                return (
+             
                 <div className="skills-image">
+                {skills.map((skill, index) => {
+                return (
                   <div className="skill-image">
                     <img
                       src={skill.image.url}
                       alt=""
                     />
                   </div>
+                     );
+                    })}
                 </div>
-                    );
-                  })}
+                 
               </div>
             </div>
           </div>

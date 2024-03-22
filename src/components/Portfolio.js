@@ -24,12 +24,12 @@ const Portfolio = ({projects}) => {
               <ul>
                 {projects.map((project, index)=>{
                   return (
-                    <li className="wow fadeInUp" data-wow-duration="1s" key={index}>
-                  <div className="list_inner">
+                    <li className="project-card wow fadeInUp" data-wow-duration="1s" key={index} style={{visibility: "visible", animationDuration: "1s"}}>
+                
                     <div
                       className="background_image"
                       data-img-url={project.image.url}
-                    />
+                    ></div>
                     <div className="content">
                       <div className="details">
                         <span className="category">
@@ -60,7 +60,7 @@ const Portfolio = ({projects}) => {
                           setPopup(true);
                         }}
                       />
-                  </div>
+                  
                 </li>
                   )
                 })}

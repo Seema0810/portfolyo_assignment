@@ -25,12 +25,15 @@ const Service = ({services}) => {
                     key={i}
                     style={{visibility: "visible", animationDuration: "1s"}}
                   >
-                    <div className="list_inner">
-                      <img className="svg" src={service.image.url} alt="" />
-                      <h3 className="title">{service.name}</h3>
+                    <div className="service-card">
+                      <div className="service-card-img">  <img className="svg" src={service.image.url} alt="" style={{width:"100%",height:"100%", borderRadius:"20px"}}/></div>
+                      <div className="service-card-content">
+                      <h1 className="title" >{service.name}</h1>
+                      <h6>${300}</h6>
                       <p className="text">
                         {service.desc.substring(0, 138)}.
                       </p>
+                      </div>
                       <a
                         className="devman_tm_full_link c-pointer"
                         onClick={() => {
