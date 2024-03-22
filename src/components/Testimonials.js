@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { testimonialsSlider } from "../sliderProps";
 import { dataImage, imgToSVG } from "../utilits";
-const Testimonials = ({testimonials}) => {
+const Testimonials = ({ testimonials }) => {
   useEffect(() => {
     dataImage();
     imgToSVG();
@@ -28,31 +28,26 @@ const Testimonials = ({testimonials}) => {
               {...testimonialsSlider}
               className="owl-carousel owl-theme owl-loaded"
             >
-              {testimonials.map((testimonial,index)=>{
+              {testimonials.map((testimonial, index) => {
                 return (
-<SwiperSlide key={index}>
-                <div className="list_inner">
-                  <img className="svg" src="img/svg/quote.svg" alt="" />
-                  <p className="text">
-                  {testimonial.review.slice(0,150)}
-                  </p>
-                  <div className="details">
-                    <div className="image">
-                      <div
-                        className="main"
-                        data-img-url={testimonial.image.url}
-                      />
+                  <SwiperSlide key={index}>
+                    <div className="list_inner">
+                      <div className="testimonial-image">
+                        <img src={testimonial.image.url} alt="" />
+                      </div>
+                      <div className="details">
+                        <div className="short">
+                          <h3>{testimonial.name}</h3>
+                          <span>{testimonial.position}</span>
+                        </div>
+                      </div>
+                      <img className="svg" src="img/svg/quote.svg" alt="" />
+                      <p className="text">{testimonial.review.slice(0, 150)}</p>
                     </div>
-                    <div className="short">
-                      <h3>{testimonial.name}</h3>
-                      <span>{testimonial.position}</span>
-                    </div>
-                  </div>
-                </div>
-              </SwiperSlide>
-                )
+                  </SwiperSlide>
+                );
               })}
-              
+
               {/* <SwiperSlide>
                 <div className="list_inner">
                   <img className="svg" src="img/svg/quote.svg" alt="" />

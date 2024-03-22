@@ -31,22 +31,7 @@ const Portfolio = ({projects}) => {
                       data-img-url={project.image.url}
                     ></div>
                     <div className="content">
-                      <div className="details">
-                        <span className="category">
-                          <a href="#">{project.title}</a>
-                        </span>
-                        <h3 className="title">
-                          <a href="#">
-                            Web Application for
-                            <br /> Desiverse
-                          </a>
-                        </h3>
-                        <span className="view_project">
-                          <a href="#">
-                            View Project <i className="icon-right-big" />
-                          </a>
-                        </span>
-                      </div>
+                    
                     </div>
                     <div className="overlay" />
                     {/* <a
